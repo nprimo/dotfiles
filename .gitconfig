@@ -1,0 +1,8 @@
+[user]
+	email = primo.niccolo@gmail.com
+	name = nprimo
+[credential]
+	helper = store
+[core]
+	editor = nvim
+
