@@ -1,6 +1,12 @@
+# Exclude all other files
 *
 **/
+# Explicit which files to include 
+# git related stuff
 !.gitignore
+!.gitconfig
+# Bash config
 !.zshrc
-!.config/nvim/*
-!.config/tmux/*
+# Vim and Tmux config
+!.config/nvim/**
+!.config/tmux/**
