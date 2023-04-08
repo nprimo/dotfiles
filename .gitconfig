@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = nprimo
 	email = primo.niccolo@gmail.com
 [core]
 	editor = nvim
-	
+[init]
+    defaultBranch = main
