@@ -1,5 +1,12 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin
+function append_to_path() {
+    export PATH=$PATH:$1
+}
+
+append_to_path "$HOME/cmake-3.25.2-linux-x86_64/bin"
+append_to_path "$HOME/bin"
+append_to_path "/usr/local/bin"
+append_to_path "$HOME/.local/bin"
+append_to_path "$PATH:/usr/local/go/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -8,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="fino"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -79,8 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
- export LC_ALL=en_US.UTF-8
- export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -100,7 +106,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias resize="xrandr --output HDMI-1 --scale 1.25x1.25"
+#
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+## Start tmux at every shell login
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux new -s playground>/dev/null 2>&1
+fi
 
+# To use Node Version Manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# For Rust
+. "$HOME/.cargo/env"
+
+# Change directory color in ls result
+LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
+
+if [[ -f "$HOME/.bash_aliases" ]]; then
+    . "$HOME/.bash_aliases"
+fi
