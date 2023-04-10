@@ -21,4 +21,4 @@ Below the location for each config file:
 2. Rearrange `.bashrc` and `.zshrc`:
     - for example, create a `.aliases` file to store aliases
     - create a function `append_to_path` to have `PATH` updates in clean way 
-
+3. Tryout setup NVIM from scratch
