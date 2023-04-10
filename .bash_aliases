@@ -1,6 +1,6 @@
 # Git
-alias   gs="git status"   
-alias   gca="git commit --amend"
+alias   gc!="git commit --amend"
+alias   gst="git status"
 
 # Move around
 alias ..='cd ..;pwd'
