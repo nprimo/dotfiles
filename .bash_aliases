@@ -1,6 +1,7 @@
 # Git
 alias   gc!="git commit --amend"
 alias   gst="git status"
+alias   glg='git log --stat'
 
 # Move around
 alias ..='cd ..;pwd'

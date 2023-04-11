@@ -122,7 +122,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Change directory color in ls result
 LS_COLORS=$LS_COLORS:'di=1;33:' ; export LS_COLORS
+zstyle ':completion:*'  list-colors '$LS_COLORS'
 
 if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
+
