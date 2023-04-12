@@ -1,3 +1,7 @@
+# Vim
+alias   v="nvim"
+alias   vim="nvim"
+
 # Git
 alias   gc!="git commit --amend"
 alias   gst="git status"
