@@ -7,6 +7,7 @@ append_to_path "$HOME/bin"
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
 append_to_path "$PATH:/usr/local/go/bin"
+append_to_path "$PATH:$HOME/squashfs-root/usr/bin/"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
