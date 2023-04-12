@@ -24,11 +24,23 @@ return require('packer').startup(function()
     use 'arcticicestudio/nord-vim'
     use 'rakr/vim-one'
     use 'ellisonleao/gruvbox.nvim'
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end
+    })
 
     -- Telescope packages
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+
+    -- treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use("nvim-treesitter/playground")
+    use("nvim-treesitter/nvim-treesitter-context");
+
 
     -- Git plugin
     use 'tpope/vim-fugitive'
@@ -49,24 +61,9 @@ return require('packer').startup(function()
     -- Undotree
     use 'mbbill/undotree'
 
-    -- Markdown preview
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
-
-    -- Sartup dashboard
-    use {
-        'goolord/alpha-nvim',
-        requires = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.startify'.config)
-        end
-    }
-
-    -- LSP stuff
     use {
         'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -84,14 +81,6 @@ return require('packer').startup(function()
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
-
-            -- Project management
-            {
-                "ahmedkhalf/project.nvim",
-                config = function()
-                    require("project_nvim").setup {}
-                end
-            }
         }
     }
     -- Automatically set up your configuration after cloning packer.nvim
