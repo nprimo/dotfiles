@@ -119,10 +119,10 @@ _G.packer_plugins = {
     path = "/home/nprimo/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["lightline-bufferline"] = {
+  harpoon = {
     loaded = true,
-    path = "/home/nprimo/.local/share/nvim/site/pack/packer/start/lightline-bufferline",
-    url = "https://github.com/mengelbrecht/lightline-bufferline"
+    path = "/home/nprimo/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["lightline.vim"] = {
     loaded = true,
