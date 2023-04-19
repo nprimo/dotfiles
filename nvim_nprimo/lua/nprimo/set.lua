@@ -37,3 +37,5 @@ vim.opt.updatetime = 50
 vim.opt.iskeyword:append("-")
 
 vim.opt.wildmenu = true
+
+vim.opt.scrolloff = 8
