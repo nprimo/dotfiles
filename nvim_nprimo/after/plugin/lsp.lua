@@ -53,7 +53,7 @@ lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   if client.name == "eslint" then
-      vim.cmd.LspStop('eslint')
+      vim.cmd.LspStop("eslint")
       return
   end
 

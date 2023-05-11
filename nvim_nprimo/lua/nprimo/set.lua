@@ -17,7 +17,7 @@ vim.opt.smartcase = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
