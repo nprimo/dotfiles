@@ -22,5 +22,11 @@ function cd () {
     ls -ACF
 }
 
+function get_gitignore() {
+    if [[ $# -eq 1 ]]; then
+        ~/script/get_gitignore.sh $1
+    fi
+}
+
 # Docker
 alias dclean="~/script/docker_clean.sh"
