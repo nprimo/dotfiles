@@ -21,3 +21,6 @@ function cd () {
     builtin cd "$1"
     ls -ACF
 }
+
+# Docker
+alias dclean="~/script/docker_clean.sh"
