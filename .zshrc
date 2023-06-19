@@ -129,3 +129,7 @@ if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
 
+# Enable autocompletion
+for f in $(find /etc/bash_completion.d/ -type f,l); do
+    source $f 2> /dev/null
+done
