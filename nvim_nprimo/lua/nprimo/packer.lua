@@ -55,12 +55,6 @@ return require('packer').startup(function()
     -- Status line
     use 'itchyny/lightline.vim'
 
-    -- File explorer
-    use {
-        'nvim-tree/nvim-tree.lua',
-        --tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
-
     -- Undotree
     use 'mbbill/undotree'
 

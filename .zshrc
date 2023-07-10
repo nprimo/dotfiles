@@ -6,8 +6,9 @@ append_to_path "$HOME/cmake-3.25.2-linux-x86_64/bin"
 append_to_path "$HOME/bin"
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
-append_to_path "$PATH:/usr/local/go/bin"
-append_to_path "$PATH:$HOME/squashfs-root/usr/bin/"
+append_to_path "/usr/local/go/bin"
+append_to_path "$HOME/squashfs-root/usr/bin/"
+append_to_path "$(go env GOPATH | awk -F':' '{print $1}')/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
