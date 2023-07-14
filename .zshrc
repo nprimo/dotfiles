@@ -134,3 +134,5 @@ fi
 for f in $(find /etc/bash_completion.d/ -type f,l); do
     source $f 2> /dev/null
 done
+
+if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
