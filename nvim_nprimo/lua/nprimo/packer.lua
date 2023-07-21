@@ -53,14 +53,14 @@ return require('packer').startup(function()
     use 'preservim/nerdcommenter'
 
     -- Status line
-    use 'itchyny/lightline.vim'
+    --use 'itchyny/lightline.vim'
 
     -- Undotree
     use 'mbbill/undotree'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        branch = 'v2.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
