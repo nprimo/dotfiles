@@ -28,7 +28,7 @@ function get_gitignore() {
 }
 
 # Docker
-alias dclean="~/script/docker_clean.sh"
+alias docker-clean="~/script/docker_clean.sh"
 
 # General
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
