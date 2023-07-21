@@ -136,3 +136,6 @@ for f in $(find /etc/bash_completion.d/ -type f,l); do
 done
 
 if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Fix for Elixir
+export ELIXIR_ERL_OPTIONS="+fnu"
