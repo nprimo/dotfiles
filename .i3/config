@@ -106,7 +106,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -210,7 +210,17 @@ exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/warty-final-ub
 
 # Set bindings to take screenshots
 #bindsym $mod+shift+s exec --no-startup-id scrot -f $HOME/Pictures/'screenshot %Y-%m-%d_%H:%M:%S.png'
-bindsym $mod+shift+s exec scrot -f $HOME/Pictures/Screenshots/'screenshot %Y-%m-%d_%H:%M:%S.png' -e 'xclip -selection clipboard -t image/png -i $f'
+#bindsym $mod+shift+s exec scrot -f $HOME/Pictures/Screenshots/'screenshot %Y-%m-%d_%H:%M:%S.png' -e 'xclip -selection clipboard -t image/png -i $f'
+set $keyboard_layout Keyboard Layout: (p) PT, (e) US English
+mode "$keyboard_layout" {
+    bindsym p exec --no-startup-id setxkbmap pt ,mode "default"
+    bindsym e exec --no-startup-id setxkbmap us ,mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+shift+<space> mode "$keyboard_layout"
 
 # Swtich keyboard languages
 exec_always "setxkbmap -model pc104 -layout us,pt -variant ,, -option grp:alt_shift_toggle"
