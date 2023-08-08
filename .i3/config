@@ -195,13 +195,6 @@ bar {
         status_command i3status
 }
 
-# Open app in proper workspace
-
-assign [class="Spotify|spotify"] $ws9
-assign [class="discord|Slack"]  $ws3
-assign [class="Brave-browser"] $ws2
-assign [class="zoom"] $ws5
-
 # Shortcut to lock screen
 bindsym $mod+shift+l exec i3lock -c 000000
 
