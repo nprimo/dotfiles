@@ -39,3 +39,5 @@ vim.opt.iskeyword:append("-")
 vim.opt.wildmenu = true
 
 vim.opt.scrolloff = 8
+
+vim.opt.listchars = { space = '.', tab = '~>' }

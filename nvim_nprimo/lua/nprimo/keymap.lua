@@ -12,9 +12,12 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- Easy formatting
 vim.keymap.set('n', "<leader>f", ":lua vim.lsp.buf.format { async = true }<CR>")
 
--- Move around without having curson moving 
+-- Move around without having curson moving
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Terminal utils
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Show white space
+vim.keymap.set("n", "<F5>", ":set list!<CR>")
