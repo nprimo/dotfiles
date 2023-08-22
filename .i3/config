@@ -203,7 +203,8 @@ exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/warty-final-ub
 
 # Set bindings to take screenshots
 #bindsym $mod+shift+s exec --no-startup-id scrot -f $HOME/Pictures/'screenshot %Y-%m-%d_%H:%M:%S.png'
-#bindsym $mod+shift+s exec scrot -f $HOME/Pictures/Screenshots/'screenshot %Y-%m-%d_%H:%M:%S.png' -e 'xclip -selection clipboard -t image/png -i $f'
+bindsym $mod+shift+s exec scrot -f $HOME/Pictures/Screenshots/'screenshot %Y-%m-%d_%H:%M:%S.png' -e 'xclip -selection clipboard -t image/png -i $f'
+
 set $keyboard_layout Keyboard Layout: (p) PT, (e) US English
 mode "$keyboard_layout" {
     bindsym p exec --no-startup-id setxkbmap pt ,mode "default"
