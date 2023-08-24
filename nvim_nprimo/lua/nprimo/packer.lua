@@ -52,9 +52,6 @@ return require('packer').startup(function()
     -- Commenter
     use 'preservim/nerdcommenter'
 
-    -- Status line
-    --use 'itchyny/lightline.vim'
-
     -- Undotree
     use 'mbbill/undotree'
 
