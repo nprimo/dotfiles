@@ -9,3 +9,5 @@
 [alias]
     graph = "log --all --graph --decorate --oneline"
     update =  !git fetch && git pull --ff-only
+    update-force = !git fetch && git pull -r --autostash
+    fpush = !git push --force-with-lease origin HEAD
