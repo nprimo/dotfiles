@@ -27,6 +27,10 @@ function get_gitignore() {
     fi
 }
 
+function ww() {
+    watch -c -n 1 "script -q -c '$@' /dev/null"
+}
+
 # Docker
 alias docker-clean="~/script/docker_clean.sh"
 
