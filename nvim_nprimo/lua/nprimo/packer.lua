@@ -23,6 +23,7 @@ return require('packer').startup(function()
     -- Color theme
     use 'arcticicestudio/nord-vim'
     use 'rakr/vim-one'
+    use 'chriskempson/base16-vim'
     use 'ellisonleao/gruvbox.nvim'
     use({
         'rose-pine/neovim',
@@ -31,6 +32,11 @@ return require('packer').startup(function()
             vim.cmd('colorscheme rose-pine')
         end
     })
+
+    -- File explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+    }
 
     -- Telescope packages
     use 'nvim-lua/plenary.nvim'
@@ -55,6 +61,7 @@ return require('packer').startup(function()
     -- Undotree
     use 'mbbill/undotree'
 
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
