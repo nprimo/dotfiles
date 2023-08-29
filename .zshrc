@@ -9,6 +9,7 @@ append_to_path "$HOME/.local/bin"
 append_to_path "/usr/local/go/bin"
 append_to_path "$HOME/squashfs-root/usr/bin/"
 append_to_path "$(go env GOPATH | awk -F':' '{print $1}')/bin"
+append_to_path "$HOME/mambaforge/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -139,3 +140,23 @@ if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.n
 
 # Fix for Elixir
 export ELIXIR_ERL_OPTIONS="+fnu"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nprimo/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nprimo/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/nprimo/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nprimo/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/nprimo/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/nprimo/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
