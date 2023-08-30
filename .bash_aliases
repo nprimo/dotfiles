@@ -31,6 +31,10 @@ function ww() {
     watch -c -n 1 "script -q -c '$@' /dev/null"
 }
 
+function rhistory() {
+     history | uniq | fzf | awk '{$1=""; print $0}' | bash
+}
+
 # Docker
 alias docker-clean="~/script/docker_clean.sh"
 
