@@ -4,12 +4,13 @@ alias   v="nvim"
 # Git
 alias   gc!="git commit --amend"
 alias   gst="git status"
-alias   glg='git log --stat'
+alias   glg="git log --stat"
+alias   fglo="git log --oneline --decorate | fzf --preview 'git show --name-only {1}'"
 
 # Move around
-alias ..='cd ..;pwd'
-alias ...='cd ../..;pwd'
-alias ....='cd ../../..;pwd'
+alias ..="cd ..;pwd"
+alias ...="cd ../..;pwd"
+alias ....="cd ../../..;pwd"
 
 # Not an alias but almost...
 function cd () {
@@ -32,7 +33,20 @@ function ww() {
 }
 
 function rhistory() {
-     history | uniq | fzf | awk '{$1=""; print $0}' | bash
+     history | cut -c 8- | uniq | fzf 
+}
+
+# fd - cd to selected directory
+function fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+# fh - repeat history
+function fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
 # Docker
