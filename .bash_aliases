@@ -36,6 +36,8 @@ function rhistory() {
      history | cut -c 8- | uniq | fzf 
 }
 
+
+# fzf function from repo example
 # fd - cd to selected directory
 function fd() {
   local dir
@@ -54,3 +56,11 @@ alias docker-clean="~/script/docker_clean.sh"
 
 # General
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
+
+# Screen light
+alias nightlight="xrandr --output eDP-1 --gamma 1.0:0.88:0.5 --brightness 0.7"
+alias daylight="xrandr --output eDP-1 --gamma 1:1:1 --brightness 1"
+
+function set-brightness() {
+    ~/script/set_brightness.sh $@
+}
