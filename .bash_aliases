@@ -46,6 +46,13 @@ function fd() {
   cd "$dir"
 }
 
+function fv() {
+  local file
+  file=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type f -print 2> /dev/null | fzf +m) &&
+  nvim "$file"
+}
+
 # fh - repeat history
 function fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
