@@ -64,9 +64,10 @@ alias docker-clean="~/script/docker_clean.sh"
 # General
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
 
-# Screen light
+# Screen related
 alias nightlight="xrandr --output eDP-1 --gamma 1.0:0.88:0.5 --brightness 0.7"
 alias daylight="xrandr --output eDP-1 --gamma 1:1:1 --brightness 1"
+alias dualscreen="xrandr --auto --output eDP-1 --mode 1600x900 --left-of HDMI-1"
 
 function set-brightness() {
     ~/script/set_brightness.sh $@
