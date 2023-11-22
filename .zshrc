@@ -160,3 +160,5 @@ if [ -f "/home/nprimo/mambaforge/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
