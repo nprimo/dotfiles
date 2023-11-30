@@ -22,9 +22,7 @@ vim.opt.wrap = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.cmd([[
-    set clipboard^=unnamed,unnamedplus
-]])
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 vim.opt.swapfile = false
 vim.opt.backup = false
