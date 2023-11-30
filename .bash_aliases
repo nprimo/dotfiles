@@ -63,7 +63,7 @@ alias docker-clean="~/scripts/docker_clean.sh"
 
 # General
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
-alias change-keyboard="~/script/change_keyboard.sh"
+alias change-keyboard="~/scripts/change_keyboard.sh"
 
 # Screen related
 alias nightlight="xrandr --output eDP-1 --gamma 1.0:0.88:0.5 --brightness 0.7"
