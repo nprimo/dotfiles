@@ -21,10 +21,7 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Color theme
-    use 'arcticicestudio/nord-vim'
-    use 'rakr/vim-one'
     use 'chriskempson/base16-vim'
-    use 'ellisonleao/gruvbox.nvim'
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -32,11 +29,6 @@ return require('packer').startup(function()
             vim.cmd('colorscheme rose-pine')
         end
     })
-
-    -- File explorer
-    use {
-        'nvim-tree/nvim-tree.lua',
-    }
 
     -- Telescope packages
     use 'nvim-lua/plenary.nvim'
@@ -92,7 +84,7 @@ return require('packer').startup(function()
     }
 
     -- Indententation helper
-    use { "lukas-reineke/indent-blankline.nvim" }
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
