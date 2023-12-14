@@ -58,6 +58,11 @@ function fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
+# Livebook - Jupyter Notebook for Elixir
+function livebook() {
+  docker run -p 8080:8080 -p 8081:8081 --pull always -u $(id -u):$(id -g) -v $(pwd):/data ghcr.io/livebook-dev/livebook
+}
+
 # Docker
 alias docker-clean="~/scripts/docker_clean.sh"
 
