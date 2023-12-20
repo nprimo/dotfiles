@@ -21,6 +21,3 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- Show white space
 vim.keymap.set("n", "<F5>", ":set list!<CR>")
-
--- Toggle nvim-tree
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
