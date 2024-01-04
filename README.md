@@ -9,16 +9,17 @@ Below the location for each config file:
 - `~/.gitconfig`
 - `~/.config/nvim/`
 - `~/.tmux.conf`
-- `~/.vimrc`
 - `~/.zshrc`
+- `~/.bash_aliases`
+- `~/.iex.exs`
+
+> Some of the aliases defined in `.bash_aliases` relies on scripts defined
+> [here](https://github.com/nprimo/scripts)
 
 ## Todo
 
-1. Write simple setup script to:
-   - ensure used tools / commands used are installed;
+1. Write simple setup script or use a tool such as
+   [`chezmoi`](https://www.chezmoi.io/). The script should:
+   - ensure used tools used are installed;
    - create the symlinks to have all the dotfiles in the correct order (backup
-     the old dotfiles somewhere easy to recover maybe);
-2. Rearrange `.bashrc` and `.zshrc`:
-    - for example, create a `.aliases` file to store aliases
-    - create a function `append_to_path` to have `PATH` updates in clean way 
-3. Tryout setup NVIM from scratch
+     the old dotfiles somewhere easy to recover).
