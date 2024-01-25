@@ -11,7 +11,6 @@ return {
                 null_ls.builtins.formatting.prettier,
                 null_ls.builtins.diagnostics.actionlint,
                 null_ls.builtins.diagnostics.shellcheck,
-                null_ls.builtins.diagnostics.write_good,
             },
         })
     end,
