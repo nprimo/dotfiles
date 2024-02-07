@@ -141,24 +141,5 @@ if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.n
 # Fix for Elixir
 export ELIXIR_ERL_OPTIONS="+fnu"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/nprimo/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/nprimo/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/nprimo/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/nprimo/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/nprimo/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/nprimo/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
