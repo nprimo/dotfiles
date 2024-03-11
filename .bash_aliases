@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Vim
 alias v="nvim"
 
@@ -84,3 +86,13 @@ alias change-keyboard="~/scripts/change_keyboard.sh"
 alias nightlight="xrandr --output eDP-1 --gamma 1.0:0.88:0.5 --brightness 0.7"
 alias daylight="xrandr --output eDP-1 --gamma 1:1:1 --brightness 1"
 alias dualscreen="xrandr --auto --output eDP-1 --mode 1600x900 --left-of HDMI-1"
+
+# 01 script
+function next-ref() {
+	if echo "$PWD" | grep "all$"; then
+		git fetch --prune
+		deno run -A https://gist.githubusercontent.com/kigiri/ef21284527391fd76ec5af94aeca7d01/raw/558aea6d0e115b7d24009ff6b6a008337505f69d/mod.js
+    else
+        echo "move to 'all' root"
+	fi
+}
