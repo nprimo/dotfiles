@@ -136,10 +136,13 @@ for f in $(find /etc/bash_completion.d/ -type f,l); do
     source $f 2> /dev/null
 done
 
-if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
 # Fix for Elixir
 export ELIXIR_ERL_OPTIONS="+fnu"
 
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# Nix related
+if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
