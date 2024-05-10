@@ -10,6 +10,8 @@ append_to_path "/usr/local/go/bin"
 append_to_path "$HOME/squashfs-root/usr/bin/"
 append_to_path "$(go env GOPATH | awk -F':' '{print $1}')/bin"
 append_to_path "$HOME/mambaforge/bin"
+append_to_path "/opt/$(ls /opt | grep node)/bin"
+append_to_path "/opt/$(ls /opt | grep nvim)/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -143,6 +145,6 @@ export ELIXIR_ERL_OPTIONS="+fnu"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # Nix related
-if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
+# export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
