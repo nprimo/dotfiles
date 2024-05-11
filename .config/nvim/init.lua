@@ -13,6 +13,10 @@ vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.breakindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 vim.opt.undofile = true
 
@@ -499,6 +503,14 @@ require("lazy").setup({
 			require("nvim-treesitter.install").prefer_git = true
 			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
+	{ -- MarkdownPreview
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
 		end,
 	},
 }, {
