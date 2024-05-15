@@ -96,3 +96,5 @@ function next-ref() {
         echo "move to 'all' root"
 	fi
 }
+
+alias test-with-container="bash ~/01/gist/test_with_container/test_with_container.sh"
