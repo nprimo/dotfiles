@@ -8,6 +8,6 @@
     defaultBranch = main
 [alias]
     graph = "log --all --graph --decorate --oneline"
-    update =  !git fetch --prune && git pull --ff-only
+    update =  !git fetch --prune --all && git pull --ff-only
     update-force = !git fetch && git pull -r --autostash
     fpush = !git push --force-with-lease origin HEAD
