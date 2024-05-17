@@ -46,13 +46,6 @@ function fd() {
 		cd "$dir"
 }
 
-function fv() {
-	local file
-	file=$(find "${1:-.}" -path '*/\.*' -prune \
-		-o -type f -print 2>/dev/null | fzf +m) &&
-		nvim "$file"
-}
-
 # fh - repeat history
 function fh() {
 	print -z "$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac |
@@ -75,26 +68,8 @@ function hot-exec() {
 	done
 }
 
-# Docker
-alias docker-clean="~/scripts/docker_clean.sh"
-
-# General
+# General survival
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
-alias change-keyboard="~/scripts/change_keyboard.sh"
-
-# Screen related
-alias nightlight="xrandr --output eDP-1 --gamma 1.0:0.88:0.5 --brightness 0.7"
-alias daylight="xrandr --output eDP-1 --gamma 1:1:1 --brightness 1"
-alias dualscreen="xrandr --auto --output eDP-1 --mode 1600x900 --left-of HDMI-1"
 
 # 01 script
-function next-ref() {
-	if echo "$PWD" | grep "all$"; then
-		git fetch --prune
-		deno run -A https://gist.githubusercontent.com/kigiri/ef21284527391fd76ec5af94aeca7d01/raw/558aea6d0e115b7d24009ff6b6a008337505f69d/mod.js
-    else
-        echo "move to 'all' root"
-	fi
-}
-
 alias test-with-container="bash ~/01/gist/test_with_container/test_with_container.sh"
