@@ -134,6 +134,10 @@ for f in $(find /etc/bash_completion.d/ -type f,l); do
     source $f 2> /dev/null
 done
 
+for f in ~/completion.d/*; do
+    source $f
+done
+
 # Fix for Elixir
 export ELIXIR_ERL_OPTIONS="+fnu"
 
