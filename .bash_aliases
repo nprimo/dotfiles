@@ -68,6 +68,12 @@ function hot-exec() {
 	done
 }
 
+# Dev utils
+function run-dev-db() {
+	docker system prune -f
+	docker run --name dev-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+}
+
 # General survival
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
 
