@@ -141,8 +141,12 @@ done
 # Fix for Elixir
 export ELIXIR_ERL_OPTIONS="+fnu"
 
+# Kubectl autocomplete
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# Zoxide init
+eval "$(zoxide init zsh)"
 
 # Nix related
 # if [ -e /home/nprimo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nprimo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
