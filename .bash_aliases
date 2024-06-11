@@ -14,13 +14,15 @@ alias ..="cd ..;pwd"
 alias ...="cd ../..;pwd"
 alias ....="cd ../../..;pwd"
 
+# Rm
+alias rm="trash-put"
+
 # Not an alias but almost...
 function cd() {
 	if [[ $# -ne 1 ]]; then
 		builtin cd "$HOME"
 	fi
-	builtin cd "$1"
-	ls -ACF
+	builtin cd "$1" && ls -ACF
 }
 
 function get_gitignore() {
