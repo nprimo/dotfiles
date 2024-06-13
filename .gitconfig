@@ -8,7 +8,7 @@
     defaultBranch = main
 [alias]
     graph = "log --all --graph --decorate --oneline"
-    update =  !git fetch --prune --all && git pull --ff-only
+    update = !git fetch --prune --all && git pull --ff-only origin $(git branch --show-current)
     fpush = !git push --force-with-lease origin HEAD
 [rerere]
 	enabled = true
