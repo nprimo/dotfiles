@@ -16,9 +16,34 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.neovim
     pkgs.zoxide
     pkgs.trash-cli
+
+    # For nvim
+    pkgs.neovim
+    pkgs.tree-sitter
+    pkgs.nodejs_22
+
+    # Clang build tools
+    pkgs.getopt
+    pkgs.flex
+    pkgs.bison
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.bc
+    pkgs.pkg-config
+    pkgs.binutils
+
+    pkgs.elfutils
+    pkgs.ncurses
+    pkgs.openssl
+    pkgs.zlib
+
+    # Extra bin
+    pkgs.ripgrep
+
+    pkgs.rustup
+    pkgs.go
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -47,6 +72,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/nvim".source = .config/nvim;
   };
 
   # Home Manager can also manage your environment variables through
