@@ -15,6 +15,24 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
+  # Shell
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    zsh-autoenv.enable = true;
+    syntaxHighlighting.enable = true;
+    ohMyZsh = {
+       enable = true;
+       theme = "ys";
+       plugins = [
+         "git"
+         "history"
+       ];
+    };
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -103,7 +121,7 @@
     git
   ];
 
-	environment.variables.EDITOR = "vim";
+  environment.variables.EDITOR = "vim";
 	
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -134,5 +152,4 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 }

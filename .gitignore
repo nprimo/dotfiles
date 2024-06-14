@@ -2,3 +2,4 @@ nvim/plugin/*
 .lua*
 lazy-lock.json
 spell/
+*.swp
