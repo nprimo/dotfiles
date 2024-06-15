@@ -13,39 +13,40 @@
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.zoxide
-    pkgs.trash-cli
+    zoxide
+    trash-cli
 
     # For nvim
-    pkgs.neovim
-    pkgs.tree-sitter
-    pkgs.nodejs_22
+    neovim
+    tree-sitter
+    nodejs_22
 
     # Clang build tools
-    pkgs.getopt
-    pkgs.flex
-    pkgs.bison
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.bc
-    pkgs.pkg-config
-    pkgs.binutils
+    getopt
+    flex
+    bison
+    gcc
+    gnumake
+    bc
+    pkg-config
+    binutils
 
-    pkgs.elfutils
-    pkgs.ncurses
-    pkgs.openssl
-    pkgs.zlib
+    elfutils
+    ncurses
+    openssl
+    zlib
 
     # Extra bin
-    pkgs.ripgrep
+    ripgrep
 
-    pkgs.rustup
-    pkgs.go
+    # Lang
+    rustup
+    go
 
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -55,20 +56,8 @@
     # '')
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-    ".config/nvim".source = .config/nvim;
+    ".config/nvim".source = ../.config/nvim;
   };
 
   # Home Manager can also manage your environment variables through
