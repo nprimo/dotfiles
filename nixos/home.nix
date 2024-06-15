@@ -29,30 +29,17 @@ in {
 
   home.file = {
     ".config/nvim".source = ../.config/nvim;
+    ".tmux.conf".source = ../.tmux.conf;
+    "scripts".source = ../scripts;
   };
 
   programs.zsh.initExtra = lib.mkIf cfg.enableZshIntegration ''
     eval "$(${cfg.package}/bin/zoxide init zsh ${cfgOptions})"
   '';
 
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/nprimo/etc/profile.d/hm-session-vars.sh
-  #
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+  };
   
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

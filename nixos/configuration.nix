@@ -27,6 +27,12 @@
          "history"
        ];
     };
+    shellAliases = {
+      "v" = "nvim";
+    };
+    interactiveShellInit = ''
+    tmux attach || tmux new -s playground>/dev/null 2>&1
+    '';
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -107,6 +113,7 @@
     wget
     curl
     git
+    tmux
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
