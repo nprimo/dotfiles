@@ -62,10 +62,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- [[ Try to make a command ]]
+-- [[ Dump - Jump to Dump ]]
 function Dump()
-	-- TODO: create a way to come back
-	vim.cmd("e ~/nprimo-dump/logs/logs.md")
+	vim.cmd("e ~/nprimo-dump/logs.md")
+	-- TODO: create a way to specify which file to change
 end
 
 vim.api.nvim_create_user_command("Dump", Dump, {})
