@@ -63,9 +63,21 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- [[ Dump - Jump to Dump ]]
-function Dump()
-	vim.cmd("e ~/nprimo-dump/logs.md")
-	-- TODO: create a way to specify which file to change
+function Dump(topic)
+	if topic.args == "" then
+		topic.args = "logs"
+	end
+	local cmd = "e ~/nprimo-dump/" .. topic.args .. ".md"
+	vim.cmd(cmd)
+	-- TODO: is there a way to have autocomplete based on existing files?
 end
 
-vim.api.nvim_create_user_command("Dump", Dump, {})
+function DumpReturn()
+	-- TODO: this should work only if you're in the dump directory...
+	-- - check ways to interact with opened buffers with nvim. For example,
+	-- select all buffers that starts with given prefix
+
+	print("WIP")
+end
+
+vim.api.nvim_create_user_command("Dump", Dump, { nargs = "?" })
