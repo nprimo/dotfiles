@@ -17,12 +17,16 @@ function Dump(topic)
 	-- TODO: is there a way to have autocomplete based on existing files?
 end
 
-function DumpReturn()
-	-- TODO: this should work only if you're in the dump directory...
-	-- - check ways to interact with opened buffers with nvim. For example,
-	-- select all buffers that starts with given prefix
-
-	print("WIP")
+function DumpClean()
+	local nvim_dump_buffs = vim.api.nvim_list_bufs()
+	for _, v in ipairs(nvim_dump_buffs) do
+		local buf_name = vim.api.nvim_buf_get_name(v)
+		if string.find(buf_name, "/nprimo-dump/", 1, true) then
+			print("removing " .. buf_name)
+			vim.api.nvim_buf_delete(v, {})
+		end
+	end
 end
 
 vim.api.nvim_create_user_command("Dump", Dump, { nargs = "?" })
+vim.api.nvim_create_user_command("DumpClean", DumpClean, {})
