@@ -12,6 +12,8 @@
     # INFO: GUI app are not working
     flyctl
     elixir
+    rebar3
+    erlang_27
 
     glow
 
