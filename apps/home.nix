@@ -16,6 +16,7 @@
     erlang_27
 
     glow
+    jujutsu
 
     exercism
 
