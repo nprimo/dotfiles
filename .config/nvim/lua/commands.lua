@@ -12,6 +12,12 @@ function Dump(topic)
 	if topic.args == "" then
 		topic.args = "logs"
 	end
+	-- TODO: think about changing the way "to dump":
+	-- - create a new file per dump?
+	-- - add tags about repo/topics to easily search all the related "jots"
+	-- - manually create links when needed
+	-- If going this way, jots from the same day should be easy to filter using
+	-- the ID (that is the timestamp) - useful for the stand up
 	local cmd = "e ~/nprimo-dump/" .. topic.args .. ".md"
 	vim.cmd(cmd)
 	-- TODO: is there a way to have autocomplete based on existing files?
@@ -28,5 +34,25 @@ function DumpClean()
 	end
 end
 
+function NewNote(title)
+	if title.args == "" then
+		title.args = "New title"
+	end
+
+	-- local now = os.time(os.date("*t"))
+	local id_datetime = os.date("%Y%m%dT%H%M%S")
+	local cmd = "e ~/nprimo-dump/notes/" .. id_datetime .. ".md"
+
+	vim.cmd(cmd)
+end
+
+-- TODO: think about using only "NewNote" for dumping
+-- - need to do some "extra" work at the end of the day, or beginning of new
+-- one  to organize previous days jots
+-- - simplify the workflow:
+--   - always "dump" in the same place
+--   - organize after, creating links + adding a "Content of table" note to
+--   have additional organization for "entry points"
 vim.api.nvim_create_user_command("Dump", Dump, { nargs = "?" })
 vim.api.nvim_create_user_command("DumpClean", DumpClean, {})
+vim.api.nvim_create_user_command("NewNote", NewNote, { nargs = "?" })
