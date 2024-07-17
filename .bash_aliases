@@ -54,6 +54,11 @@ function fh() {
 		sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')"
 }
 
+# [f]zf [g]it [b]ranch  - change branch
+function fgb() {
+	git checkout $(git branch | fzf)
+}
+
 # Livebook - Jupyter Notebook for Elixir
 function livebook() {
 	docker run -p 8080:8080 -p 8081:8081 --pull always -u "$(id -u)":"$(id -g)" -v "$(pwd)":/data ghcr.io/livebook-dev/livebook
