@@ -9,16 +9,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- [[ Dump - Jump to Dump ]]
 function Dump(topic)
-	if topic.args == "" then
-		topic.args = "logs"
-	end
-	-- TODO: think about changing the way "to dump":
-	-- - create a new file per dump?
-	-- - add tags about repo/topics to easily search all the related "jots"
-	-- - manually create links when needed
-	-- If going this way, jots from the same day should be easy to filter using
-	-- the ID (that is the timestamp) - useful for the stand up
-	local cmd = "e ~/nprimo-dump/" .. topic.args .. ".md"
+	-- INFO: the Dump is supposed to be a "RAM" for your brain.
+	-- It can be useful to "separate" already the dump depending on the area:
+	-- - work
+	-- - personal life
+	-- - specific project
+	-- - ...
+	vim.cmd("! mkdir -p " .. "~/nprimo-dump/" .. topic.args)
+	local cmd = "e ~/nprimo-dump/" .. topic.args .. "/logs.md"
 	vim.cmd(cmd)
 	-- TODO: is there a way to have autocomplete based on existing files?
 end
