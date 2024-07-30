@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -16,8 +16,6 @@
     erlang_27
 
     glow
-    jujutsu
-
     exercism
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
