@@ -12,6 +12,7 @@ append_to_path "$(go env GOPATH | awk -F':' '{print $1}')/bin"
 append_to_path "$HOME/mambaforge/bin"
 append_to_path "/opt/$(ls /opt | grep node)/bin"
 append_to_path "/opt/$(ls /opt | grep nvim)/bin"
+append_to_path "/home/nprimo/.deno/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
