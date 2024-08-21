@@ -25,12 +25,6 @@ function cd() {
 	builtin cd "$1" && ls -ACF
 }
 
-function get_gitignore() {
-	if [[ $# -eq 1 ]]; then
-		~/scripts/get_gitignore.sh "$1"
-	fi
-}
-
 function ww() {
 	watch -c -n 1 "script -q -c '$@' /dev/null"
 }

@@ -9,17 +9,14 @@ function append_to_path() {
     export PATH=$PATH:$1
 }
 
-append_to_path "$HOME/cmake-3.25.2-linux-x86_64/bin"
-append_to_path "$HOME/bin"
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
 append_to_path "/usr/local/go/bin"
-append_to_path "$HOME/squashfs-root/usr/bin/"
 append_to_path "$(go env GOPATH | awk -F':' '{print $1}')/bin"
-append_to_path "$HOME/mambaforge/bin"
 append_to_path "/opt/$(ls /opt | grep node)/bin"
 append_to_path "/opt/$(ls /opt | grep nvim)/bin"
 append_to_path "/home/nprimo/.deno/bin"
+append_to_path "$HOME/scripts/"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -28,7 +25,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="ys"
+# ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -90,7 +87,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
