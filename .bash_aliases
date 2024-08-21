@@ -4,17 +4,33 @@
 alias v="nvim"
 
 # Git
+alias ga="git add"
+alias gaa="git add --all"
+
+alias gc="git commit -v"
 alias gc!="git commit --amend"
+
+alias gco="git checkout"
+alias gcb="git checkout --branch"
+
+alias gd="git diff"
+
 alias gst="git status"
+
 alias glg="git log --stat"
+alias glo="git log --oneline"
 alias fglo="git log --oneline --decorate | fzf --preview 'git show --name-only {1}'"
+
+alias gp="git push"
+
+alias grs="git restore"
 
 # Move around
 alias ..="cd ..;pwd"
 alias ...="cd ../..;pwd"
 alias ....="cd ../../..;pwd"
 
-# Rm
+# Rm - avoid deleting for ever
 alias rm="trash-put"
 
 # Not an alias but almost...
@@ -56,17 +72,6 @@ function fgb() {
 # Livebook - Jupyter Notebook for Elixir
 function livebook() {
 	docker run -p 8080:8080 -p 8081:8081 --pull always -u "$(id -u)":"$(id -g)" -v "$(pwd)":/data ghcr.io/livebook-dev/livebook
-}
-
-function set-brightness() {
-	~/script/set_brightness.sh "$@"
-}
-
-# Exec command whenever something change locally
-function hot-exec() {
-	while inotifywait -e close_write ./**; do
-		"$@"
-	done
 }
 
 # Dev utils
