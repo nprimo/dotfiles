@@ -72,8 +72,7 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
   };
 
   # Enable CUPS to print documents.
@@ -114,6 +113,7 @@
     curl
     git
     tmux
+    brave
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
