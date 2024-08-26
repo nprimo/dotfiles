@@ -4,16 +4,10 @@ function append_to_path() {
 
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
-append_to_path "/usr/local/go/bin"
-append_to_path "$(go env GOPATH | awk -F':' '{print $1}')/bin"
 append_to_path "/opt/$(ls /opt | grep nvim)/bin"
 append_to_path "/usr/local/$(ls /usr/local/ | grep lua)/bin"
 append_to_path "/home/nprimo/.deno/bin"
 append_to_path "$HOME/scripts/"
-
-# nvm - version manager for node
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # asdf 
 . "$HOME/.asdf/asdf.sh"
@@ -35,9 +29,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     tmux attach || tmux new -s playground>/dev/null 2>&1
 fi
-
-# For Rust
-. "$HOME/.cargo/env"
 
 if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
