@@ -25,6 +25,9 @@ plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+# Change directory color
+LS_COLORS='di=01;33'
+
 ## Start tmux at every shell login
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     tmux attach || tmux new -s playground>/dev/null 2>&1
@@ -55,7 +58,6 @@ export ELIXIR_ERL_OPTIONS="+fnu"
 eval "$(zoxide init zsh)"
 
 # glow autocomplete
-source <(glow completion zsh); compdef _glow glow
-
-# fzf - from manual install
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if glow 2> /dev/null; then
+    source <(glow completion zsh); compdef _glow glow
+fi
