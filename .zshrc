@@ -4,9 +4,6 @@ function append_to_path() {
 
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
-append_to_path "/opt/$(ls /opt | grep nvim)/bin"
-append_to_path "/usr/local/$(ls /usr/local/ | grep lua)/bin"
-append_to_path "/home/nprimo/.deno/bin"
 append_to_path "$HOME/scripts/"
 
 # asdf 
@@ -47,17 +44,5 @@ for f in ~/completion.d/*; do
     source $f
 done
 
-# Fix for Elixir
-export ELIXIR_ERL_OPTIONS="+fnu"
-
-# Kubectl autocomplete
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
-
 # Zoxide init
-eval "$(zoxide init zsh)"
-
-# glow autocomplete
-if glow 2> /dev/null; then
-    source <(glow completion zsh); compdef _glow glow
-fi
+[[ $commands[zoxide] ]] && eval "$(zoxide init zsh)"
