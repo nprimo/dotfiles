@@ -25,11 +25,6 @@ source $ZSH/oh-my-zsh.sh
 # Change directory color
 LS_COLORS='di=01;33'
 
-## Start tmux at every shell login
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-    tmux attach || tmux new -s playground>/dev/null 2>&1
-fi
-
 if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
