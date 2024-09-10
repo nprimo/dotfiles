@@ -15,8 +15,8 @@ function Dump(topic)
 	-- - personal life
 	-- - specific project
 	-- - ...
-	vim.cmd("! mkdir -p " .. "~/nprimo-dump/" .. topic.args)
-	local cmd = "e ~/nprimo-dump/" .. topic.args .. "/logs.md"
+	vim.cmd("! mkdir -p " .. "~/dump/" .. topic.args)
+	local cmd = "e ~/dump/" .. topic.args .. "/logs.md"
 	vim.cmd(cmd)
 	-- TODO: is there a way to have autocomplete based on existing files?
 end
@@ -25,7 +25,7 @@ function DumpClean()
 	local nvim_dump_buffs = vim.api.nvim_list_bufs()
 	for _, v in ipairs(nvim_dump_buffs) do
 		local buf_name = vim.api.nvim_buf_get_name(v)
-		if string.find(buf_name, "/nprimo-dump/", 1, true) then
+		if string.find(buf_name, "/dump/", 1, true) then
 			print("removing " .. buf_name)
 			vim.api.nvim_buf_delete(v, {})
 		end
@@ -39,7 +39,7 @@ function NewNote(title)
 
 	-- local now = os.time(os.date("*t"))
 	local id_datetime = os.date("%Y%m%dT%H%M%S")
-	local cmd = "e ~/nprimo-dump/notes/" .. id_datetime .. ".md"
+	local cmd = "e ~/dump/notes/" .. id_datetime .. ".md"
 
 	vim.cmd(cmd)
 end
