@@ -80,11 +80,6 @@ function run-dev-db() {
 	docker run --name dev-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 }
 
-# Note taking
-# INFO: the full path might change depending on where is my "dump dir"
-alias new-note="/home/nprimo/nprimo-dump/utils/new-note.sh"
-alias dump="/home/nprimo/nprimo-dump/utils/dump.sh"
-
 # General survival
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
 
