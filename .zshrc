@@ -6,10 +6,13 @@ append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
 append_to_path "$HOME/scripts/"
 
-# asdf 
+# --- asdf 
 . "$HOME/.asdf/asdf.sh"
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
+# for go
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
