@@ -1,4 +1,3 @@
-print("a lua file")
 vim.opt.breakindent = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

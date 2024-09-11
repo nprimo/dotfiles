@@ -22,7 +22,7 @@ return { -- Autoformat
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
-			javascript = { { "prettierd", "prettier" } },
+			javascript = { { "prettier", "prettier" } },
 			markdown = { "prettier" },
 			json = { "prettier" },
 			shell = { "shfmt" },
