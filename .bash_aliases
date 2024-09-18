@@ -11,7 +11,6 @@ alias gc="git commit -v"
 alias gc!="git commit --amend"
 
 alias gco="git checkout"
-alias gcb="git checkout --branch"
 
 alias gd="git diff"
 

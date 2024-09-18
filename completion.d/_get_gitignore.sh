@@ -1,3 +1,5 @@
+echo "loading get_gitignore.sh completions..."
+
 g_opts=$(gh api /repos/github/gitignore/contents/ |
     jq '.[] .name' | grep gitignore | xargs)
 
