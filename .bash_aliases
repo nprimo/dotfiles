@@ -29,9 +29,6 @@ alias ..="cd ..;pwd"
 alias ...="cd ../..;pwd"
 alias ....="cd ../../..;pwd"
 
-# Rm - avoid deleting for ever
-alias rm="trash-put"
-
 # Not an alias but almost...
 function cd() {
 	if [[ $# -ne 1 ]]; then

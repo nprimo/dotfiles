@@ -5,6 +5,7 @@ function append_to_path() {
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
 append_to_path "$HOME/scripts/"
+append_to_path "/opt/homebrew/bin"
 
 # --- asdf 
 . "$HOME/.asdf/asdf.sh"
@@ -21,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,11 +32,6 @@ LS_COLORS='di=01;33'
 if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
-
-# Enable autocompletion
-for f in $(find /etc/bash_completion.d/ -type f,l); do
-    source $f 2> /dev/null
-done
 
 # Custom completion
 for f in ~/completion.d/*; do
