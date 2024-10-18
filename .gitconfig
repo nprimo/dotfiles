@@ -1,3 +1,6 @@
 [user]
 	email = niccolo@cloudflare.com
 	name = niccolo
+
+[core]
+	editor = nvim

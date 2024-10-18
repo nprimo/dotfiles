@@ -29,6 +29,9 @@ alias ..="cd ..;pwd"
 alias ...="cd ../..;pwd"
 alias ....="cd ../../..;pwd"
 
+# Soft rm
+alias rm="trash-put"
+
 # Not an alias but almost...
 function cd() {
 	if [[ $# -ne 1 ]]; then
