@@ -26,7 +26,6 @@ return { -- Autoformat
 			markdown = { "prettier" },
 			json = { "prettier" },
 			shell = { "shfmt" },
-			go = { "gofumpt" },
 		},
 	},
 }
