@@ -12,6 +12,7 @@ function append_to_path() {
 append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
 append_to_path "$HOME/scripts/"
+append_to_path "$HOME/.cargo/bin"
 
 # --- asdf 
 . "$HOME/.asdf/asdf.sh"
