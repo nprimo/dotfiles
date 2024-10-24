@@ -32,9 +32,6 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Change directory color
-LS_COLORS='di=01;33'
-
 if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
