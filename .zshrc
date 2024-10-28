@@ -13,6 +13,7 @@ append_to_path "/usr/local/bin"
 append_to_path "$HOME/.local/bin"
 append_to_path "$HOME/scripts/"
 append_to_path "/opt/homebrew/bin"
+append_to_path "$HOME/go/bin"
 
 # --- asdf 
 . "$HOME/.asdf/asdf.sh"
@@ -33,9 +34,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Change directory color
-LS_COLORS='di=01;33'
-
 if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
@@ -50,6 +48,3 @@ done
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# start tmux or attach to current session
-[[ $commands[tmux] ]] && tmux a || tmux -2 
