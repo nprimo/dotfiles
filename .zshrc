@@ -43,6 +43,10 @@ for f in ~/completion.d/*; do
     source $f
 done
 
+# Autocomplete
+[[ $commands[helm] ]] && source <(helm completion zsh)
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
 # Zoxide init
 [[ $commands[zoxide] ]] && eval "$(zoxide init zsh)"
 
