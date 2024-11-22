@@ -38,6 +38,10 @@ if [[ -f "$HOME/.bash_aliases" ]]; then
     . "$HOME/.bash_aliases"
 fi
 
+
+# Add cert for cloudlfared
+. "$HOME/.local/share/cloudflare-warp-certs/config.sh"
+
 # Custom completion
 for f in ~/completion.d/*; do
     source $f

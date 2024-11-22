@@ -4,3 +4,5 @@
 
 [core]
 	editor = nvim
+[include]
+	path = /Users/niccolo/.local/share/cloudflare-warp-certs/gitconfig
