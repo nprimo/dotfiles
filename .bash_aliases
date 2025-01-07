@@ -32,6 +32,9 @@ alias ....="cd ../../..;pwd"
 # Soft rm
 alias rm="trash-put"
 
+# K8s
+alias k="kubectl"
+
 # Not an alias but almost...
 function cd() {
 	if [[ $# -ne 1 ]]; then

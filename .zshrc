@@ -50,9 +50,14 @@ done
 # Autocomplete
 [[ $commands[helm] ]] && source <(helm completion zsh)
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+source <(curl -s https://raw.githubusercontent.com/Orange-OpenSource/hurl/refs/heads/master/completions/_hurl)
 
 # Zoxide init
 [[ $commands[zoxide] ]] && eval "$(zoxide init zsh)"
+
+# vault required config
+export VAULT_ADDR=https://vault.cfdata.org:8200
+export VAULT_CACERT=/tmp/cfks.crt
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
