@@ -15,4 +15,5 @@ return {
 			require("custom.git")
 		end,
 	},
+	{ "sindrets/diffview.nvim" },
 }
