@@ -1,0 +1,5 @@
+font-size = 13
+font-family = MesloLGS NF
+font-feature = -calt -liga -dlig
+
+theme = tokyonight_night
