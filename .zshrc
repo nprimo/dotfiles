@@ -58,6 +58,7 @@ source <(curl -s https://raw.githubusercontent.com/Orange-OpenSource/hurl/refs/h
 # vault required config
 export VAULT_ADDR=https://vault.cfdata.org:8200
 export VAULT_CACERT=/tmp/cfks.crt
+alias valut-login="vault login -method=oidc -no-print"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
