@@ -24,6 +24,8 @@ alias gp="git push"
 
 alias grs="git restore"
 
+alias glc="git rev-parse --short HEAD"
+
 # Move around
 alias ..="cd ..;pwd"
 alias ...="cd ../..;pwd"
