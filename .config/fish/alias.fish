@@ -23,6 +23,7 @@ alias ....="cd ../../..;pwd"
 
 # Rm - avoid deleting for ever
 alias rm="trash-put"
+alias md="mkdir -p"
 
 function fh 
 	history | cut -c 8- | uniq | fzf
