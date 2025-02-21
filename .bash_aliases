@@ -84,6 +84,10 @@ function run-dev-db() {
 	docker run --name dev-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 }
 
+# CF
+alias vault-certificates="cloudflared access curl https://vault-access.cfdata.org/v1/pki-cfks/ca/pem --location --output /tmp/cfks.crt"
+alias vault-login="vault login -method=oidc -no-print"
+
 # General survival
 alias rescue-touchpad="sudo modprobe -r psmouse && sudo modprobe psmouse"
 

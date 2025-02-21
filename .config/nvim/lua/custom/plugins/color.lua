@@ -5,8 +5,8 @@ return {
 		priority = 1000,
 		opts = {},
 		init = function()
-			vim.cmd.colorscheme("tokyonight-moon")
-			vim.cmd.hi("Comment gui=none")
+			vim.cmd.colorscheme("tokyonight-night")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
 }
