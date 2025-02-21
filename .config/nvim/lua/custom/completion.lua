@@ -20,11 +20,11 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 
-		-- ["<C-j>"] = cmp.mapping(function()
-		-- 	if luasnip.locally_jumpable(-1) then
-		-- 		luasnip.jump(-1)
-		-- 	end
-		-- end, { "i", "s" }),
+		["<C-j>"] = cmp.mapping(function()
+			if luasnip.locally_jumpable(-1) then
+				luasnip.jump(-1)
+			end
+		end, { "i", "s" }),
 	}),
 	sources = {
 		{ name = "nvim_lsp" },
