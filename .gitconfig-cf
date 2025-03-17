@@ -11,3 +11,6 @@
 
 [rerere]
 	enabled = true
+
+[diff]
+    algorithm = histogram
