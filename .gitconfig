@@ -1,5 +1,7 @@
 [includeIf "gitdir:~/cf-repos/"]
   path = ~/.gitconfig-cf
+[includeIf "gitdir:~/bau/"]
+  path = ~/.gitconfig-cf
 [includeIf "gitdir:~/nprimo/"]
   path = ~/.gitconfig-nprimo
 [includeIf "gitdir:~/dotfiles/"]
