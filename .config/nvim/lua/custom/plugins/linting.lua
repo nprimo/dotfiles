@@ -4,9 +4,9 @@ return { -- Linting
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
-			shell = { "shellcheck" },
-			markdown = { "proselint" },
-			dockerfile = { "hadolint" },
+			-- shell = { "shellcheck" },
+			-- markdown = { "proselint" },
+			-- dockerfile = { "hadolint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
