@@ -8,6 +8,10 @@
   home.packages = with pkgs; [
     beamMinimal27Packages.elixir_1_17
     nodejs_23
+    cargo
+    rustc
+
+    neovim
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -26,7 +30,7 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   programs.home-manager.enable = true;
