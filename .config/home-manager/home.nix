@@ -6,12 +6,16 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    # Dev lang
     beamMinimal27Packages.elixir_1_17
     nodejs_23
     cargo
     rustc
 
+    # tooling
     neovim
+    hurl
+    fzf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
