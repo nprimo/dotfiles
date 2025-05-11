@@ -26,3 +26,7 @@ fi
 if ! nix --version 2>&1 > /dev/null; then
     sh <(curl -L https://nixos.org/nix/install) --daemon
 fi
+
+if ! brave-browser --version 2>&1 > /dev/null; then
+    curl -fsS https://dl.brave.com/install.sh | sh
+fi
