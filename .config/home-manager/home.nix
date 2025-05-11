@@ -8,14 +8,19 @@
   home.packages = with pkgs; [
     # Dev lang
     beamMinimal27Packages.elixir_1_17
-    nodejs_23
+    nodejs_24
     cargo
     rustc
+    go
 
     # tooling
     neovim
-    hurl
+    zoxide
+    tmux
     fzf
+
+    # extras
+    hurl
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
