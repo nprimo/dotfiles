@@ -18,5 +18,9 @@ zoxide init fish | source
 
 if status is-interactive
 and not set -q TMUX
-    exec tmux
+  set session "base"
+  if not tmux has-session -t "$session" 2>/dev/null
+      tmux new-session -s "$session" -d
+  end
+  tmux attach -t "$session"
 end
