@@ -7,7 +7,7 @@
 
   home.packages = with pkgs; [
     # Dev lang
-    beamMinimal27Packages.elixir_1_17
+    beamMinimal27Packages.elixir_1_18
     nodejs_24
     cargo
     rustc
