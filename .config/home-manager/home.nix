@@ -12,7 +12,6 @@
     cargo
     rustc
     go
-    deno
 
     # tooling
     neovim
