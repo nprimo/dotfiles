@@ -1,7 +1,7 @@
 return {
   "David-Kunz/gen.nvim",
   opts = {
-    model = "gemma3:4b",
+    model = "codellama",
     display_mode = "vertical"
   }
 }
