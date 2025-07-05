@@ -18,6 +18,7 @@
     zoxide
     tmux
     fzf
+    jujutsu
 
     # extras
     hurl
