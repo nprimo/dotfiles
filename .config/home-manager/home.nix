@@ -19,6 +19,7 @@
     tmux
     fzf
     jujutsu
+    tree
 
     # extras
     hurl
