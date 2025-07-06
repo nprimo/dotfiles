@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt update && sudo apt upgrade 
+sudo apt update && sudo apt upgrade -y
 
 # package to be installed
 packages=(
@@ -9,6 +9,7 @@ packages=(
     "build-essential" # gcc etc
     "wl-clipboard"
     "fish"
+    "stow"
 )
 
 sudo apt autoremove
@@ -18,15 +19,11 @@ for p in ${packages[@]}; do
 done
 
 # Add starship
-if ! starship --version 2>&1 > /dev/null; then
+if ! starship --version > /dev/null 2>&1; then
     curl -sS https://starship.rs/install.sh | sh
 fi
 
 # Add nix
-if ! nix --version 2>&1 > /dev/null; then
+if ! nix --version > /dev/null 2>&1; then
     sh <(curl -L https://nixos.org/nix/install) --daemon
-fi
-
-if ! brave-browser --version 2>&1 > /dev/null; then
-    curl -fsS https://dl.brave.com/install.sh | sh
 fi
