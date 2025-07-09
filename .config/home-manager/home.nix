@@ -20,6 +20,7 @@
     fzf
     jujutsu
     tree
+    gemini-cli
 
     # extras
     hurl
