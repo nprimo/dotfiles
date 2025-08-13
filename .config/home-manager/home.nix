@@ -22,6 +22,8 @@
     jujutsu
     tree
     gemini-cli
+    ripgrep
+    tree-sitter
 
     # extras
     hurl
