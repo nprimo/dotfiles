@@ -3,7 +3,7 @@
 {
   home.username = "nprimo";
   home.homeDirectory = "/home/nprimo";
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
     # Dev lang
