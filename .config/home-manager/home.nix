@@ -24,6 +24,7 @@
     gemini-cli
     ripgrep
     tree-sitter
+    sqlite
 
     # extras
     hurl
