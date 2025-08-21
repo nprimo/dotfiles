@@ -25,6 +25,7 @@
     ripgrep
     tree-sitter
     sqlite
+    gh
 
     # extras
     hurl
