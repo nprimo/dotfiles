@@ -7,7 +7,7 @@
 
   home.packages = with pkgs; [
     # Dev lang
-    beamMinimal27Packages.elixir_1_18
+    beam28Packages.elixir_1_19
     nodejs_24
     cargo
     rustc
@@ -26,8 +26,6 @@
     tree-sitter
     sqlite
     gh
-
-    # extras
     hurl
   ];
 
