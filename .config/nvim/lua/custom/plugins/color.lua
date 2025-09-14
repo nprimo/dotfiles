@@ -11,11 +11,12 @@ return { -- You can easily change to a different colorscheme.
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
+        transparent = true
       }
 
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'tokyonight-day'
     end,
   }
