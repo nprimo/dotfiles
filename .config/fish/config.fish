@@ -1,3 +1,7 @@
+##########################
+# Update PATH for binaries
+##########################
+
 set PATH $PATH "/usr/local/bin"
 set PATH $PATH "/opt/nvim-linux-x86_64/bin/"
 set PATH $PATH "$HOME/.local/bin"
@@ -8,6 +12,7 @@ set ENCORE_INSTALL "$HOME/.encore"
 set PATH $PATH "$ENCORE_INSTALL/bin"
 
 source $HOME/.config/fish/alias.fish
+set -U fish_greeting
 
 ##################
 ## Straship prompt
@@ -19,9 +24,17 @@ end
 starship init fish | source
 enable_transience
 
+###############
+# Programs init
+###############
+
 zoxide init fish | source
 jj util completion fish | source
 mise activate fish | source
+
+#############
+# TMUX set up
+#############
 
 if status is-interactive
 and not set -q TMUX
