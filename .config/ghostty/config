@@ -3,4 +3,4 @@ gtk-titlebar = false
 font-size = 12
 font-feature = -calt, -liga, -dlig
 
-theme = tokyonight-day
+theme = TokyoNight Day
