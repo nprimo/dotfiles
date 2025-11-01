@@ -44,3 +44,13 @@ and not set -q TMUX
   end
   tmux attach -t "$session"
 end
+
+#######
+# pnpm
+#######
+
+set -gx PNPM_HOME "/home/nprimo/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
