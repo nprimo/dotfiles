@@ -12,6 +12,7 @@ set ENCORE_INSTALL "$HOME/.encore"
 set PATH $PATH "$ENCORE_INSTALL/bin"
 
 source $HOME/.config/fish/alias.fish
+source $HOME/.config/fish/bun.fish
 set -U fish_greeting
 
 ##################
