@@ -11,6 +11,8 @@ set PATH $PATH "$HOME/go/bin"
 set ENCORE_INSTALL "$HOME/.encore"
 set PATH $PATH "$ENCORE_INSTALL/bin"
 
+set -x EDITOR "nvim"
+
 source $HOME/.config/fish/alias.fish
 source $HOME/.config/fish/bun.fish
 set -U fish_greeting
