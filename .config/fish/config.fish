@@ -22,7 +22,7 @@ set -U fish_greeting
 ##################
 
 function starship_transient_prompt_func
-  starship module character
+    starship module character
 end
 starship init fish | source
 enable_transience
@@ -40,12 +40,12 @@ mise activate fish | source
 #############
 
 if status is-interactive
-and not set -q TMUX
-  set session "base"
-  if not tmux has-session -t "$session" 2>/dev/null
-      tmux new-session -s "$session" -d
-  end
-  tmux attach -t "$session"
+    and not set -q TMUX
+    set session base
+    if not tmux has-session -t "$session" 2>/dev/null
+        tmux new-session -s "$session" -d
+    end
+    tmux attach -t "$session"
 end
 
 #######
@@ -54,7 +54,7 @@ end
 
 set -gx PNPM_HOME "/home/nprimo/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
 
