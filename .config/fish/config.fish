@@ -32,7 +32,6 @@ enable_transience
 ###############
 
 zoxide init fish | source
-jj util completion fish | source
 mise activate fish | source
 
 #############
