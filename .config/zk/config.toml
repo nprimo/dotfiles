@@ -22,16 +22,37 @@ recents = "--sort created- --created-after 'last two weeks'"
 [group.daily]
 paths = ["notes/daily"]
 
+[group.idea]
+paths = ["notes/idea"]
+
+[group.bullet]
+paths = ["notes/bullet"]
+
 [group.daily.note]
 filename = "{{format-date now}}"
 extension = "md"
 template = "daily.md"
+
+[group.idea.note]
+extension = "md"
+template = "idea.md"
+
+[group.bullet.note]
+filename = "{{format-date now}}"
+extension = "md"
+template = "bullet.md"
 
 [alias]
 config = 'nvim "$HOME/.dotfiles/zk/config.toml"'
 
 daily = 'zk new --group daily "$ZK_NOTEBOOK_DIR/daily"'
 ls-daily = 'zk edit "$ZK_NOTEBOOK_DIR/daily" --sort created- --interactive'
+
+idea = 'zk new --group idea "$ZK_NOTEBOOK_DIR/idea"'
+ls-idea = 'zk edit "$ZK_NOTEBOOK_DIR/idea" --sort created- --interactive'
+
+bullet = 'zk new --group bullet "$ZK_NOTEBOOK_DIR/bullet"'
+ls-bullet = 'zk edit "$ZK_NOTEBOOK_DIR/bullet" --sort created- --interactive'
 
 update = "cd $ZK_NOTEBOOK_DIR; git add -A; git commit -am 'updating'; git push; cd -"
 
