@@ -51,7 +51,7 @@ end
 # pnpm
 #######
 
-set -gx PNPM_HOME "/home/nprimo/.local/share/pnpm"
+set -gx PNPM_HOME "/home/nprimo/.local/share/pnpm/bin"
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
