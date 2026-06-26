@@ -7,6 +7,9 @@ binds {
     // === Application Launchers ===
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+B hotkey-overlay-title="Open Browser" { spawn "helium-browser"; }
+    Mod+S hotkey-overlay-title="Toggle Handy" {
+        spawn "~/Applications/Handy_0.8.3_amd64.AppImage" "--toggle-transcription";
+    }
 
     Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
