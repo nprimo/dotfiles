@@ -228,6 +228,14 @@ return {
         -- ts_ls = {},
         --
 
+        vtsls = {
+          settings = {
+            vtsls = {
+              autoUseWorkspaceTsdk = true,
+            },
+          },
+        },
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -273,10 +281,27 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name)
           end,
         },
       }
+
+      -- Setup vtsls directly to ensure settings are applied
+      vim.lsp.config('vtsls', {
+        capabilities = capabilities,
+        settings = {
+          vtsls = {
+            autoUseWorkspaceTsdk = true,
+            typescript = {
+              tsserver = {
+                maxTsServerMemory = 12288,
+              },
+            },
+          },
+        },
+      })
+      vim.lsp.enable('vtsls')
     end,
   },
 }
