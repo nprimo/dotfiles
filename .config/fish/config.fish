@@ -35,17 +35,10 @@ zoxide init fish | source
 mise activate fish | source
 
 #############
-# TMUX set up
+# Multiplexer set up
 #############
 
-if status is-interactive
-    and not set -q TMUX
-    set session base
-    if not tmux has-session -t "$session" 2>/dev/null
-        tmux new-session -s "$session" -d
-    end
-    tmux attach -t "$session"
-end
+# starting herdr cause a weird bug - starting manually at each startup
 
 #######
 # pnpm
