@@ -14,7 +14,7 @@ id-case = "lower"
 [tool]
 editor = "nvim"
 pager = "less -FIRX"
-fzf-preview = "cat {-1}"
+fzf-preview = "bat -p --color always {-1}"
 
 [filter]
 recents = "--sort created- --created-after 'last two weeks'"
@@ -24,6 +24,7 @@ paths = ["notes/daily"]
 
 [group.idea]
 paths = ["notes/idea"]
+# This should be the "default" as well
 
 [group.bullet]
 paths = ["notes/bullet"]
@@ -44,6 +45,7 @@ template = "bullet.md"
 
 [alias]
 config = 'nvim "$HOME/.dotfiles/zk/config.toml"'
+ls = 'zk list -i'
 
 daily = 'zk new --group daily "$ZK_NOTEBOOK_DIR/daily"'
 ls-daily = 'zk edit "$ZK_NOTEBOOK_DIR/daily" --sort created- --interactive'
