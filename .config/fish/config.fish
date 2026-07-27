@@ -28,11 +28,15 @@ starship init fish | source
 enable_transience
 
 ###############
-# Programs init
+# Programs init and completions
 ###############
 
 zoxide init fish | source
 mise activate fish | source
+
+if herdr --version > /dev/null
+    herdr completion fish | source
+end
 
 #############
 # Multiplexer set up
