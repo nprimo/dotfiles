@@ -45,7 +45,7 @@ template = "bullet.md"
 
 [alias]
 config = 'nvim "$HOME/.dotfiles/zk/config.toml"'
-ls = 'zk list -i'
+ls = 'zk edit -i'
 
 daily = 'zk new --group daily "$ZK_NOTEBOOK_DIR/daily"'
 ls-daily = 'zk edit "$ZK_NOTEBOOK_DIR/daily" --sort created- --interactive'

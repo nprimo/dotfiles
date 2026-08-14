@@ -10,4 +10,4 @@ spell/
 .config/niri/dms/wpblur.kdl
 .config/ghostty/themes/dankcolors
 .config/herdr/herdr-*.log
-.config/herdr/session.json
+.config/herdr/*.json
