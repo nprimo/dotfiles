@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export PI_WEB_TOOLS_EXA_ENDPOINT:https\x3a//mcp\x2eexa\x2eai/mcp
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_user_paths:/home/nprimo/\x2eopencode/bin
