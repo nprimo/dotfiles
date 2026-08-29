@@ -1,0 +1,13 @@
+{
+  "lastChangelogVersion": "0.84.4",
+  "theme": "dark",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "glm-5.3-flash",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "git:github.com/dmmulroy/pi-web-tools",
+    "npm:@plannotator/pi-extension"
+  ],
+  "hideThinkingBlock": false,
+  "externalEditor": "nvim"
+}
