@@ -1,0 +1,28 @@
+# pi sandbox image — pi + minimal CLI tooling, non-root user matching the host.
+# Build:  docker build -t pi-sandbox -f Dockerfile.pi --build-arg UID=$(id -u) --build-arg GID=$(id -g) .
+# The pi.fish wrapper builds this automatically on first run.
+FROM node:24-bookworm-slim
+
+ARG UID=1000
+ARG GID=1000
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends bash ca-certificates git ripgrep poppler-utils jq vim \
+  && rm -rf /var/lib/apt/lists/*
+# CACHEBUST: build args invalidate cache on declaration (not usage), so a new
+# value makes this layer re-run — re-resolving the latest pi release — while
+# the apt layer above stays cached. `pi update` passes a fresh timestamp.
+ARG CACHEBUST=1
+RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+
+# Non-root user matching the host uid/gid so files written to /workspace and
+# to the mounted agent dir are owned by the host user, not root. The base
+# image ships a "node" user at uid/gid 1000 — remove it first or groupadd
+# fails with "GID 1000 already exists" when the host uid is 1000.
+RUN userdel -r node 2>/dev/null; groupdel node 2>/dev/null; \
+    groupadd -g "$GID" pi && useradd -m -u "$UID" -g "$GID" -s /bin/bash pi
+
+USER pi
+ENV HOME=/home/pi
+WORKDIR /workspace
+ENTRYPOINT ["pi"]

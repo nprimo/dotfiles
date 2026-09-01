@@ -1,0 +1,1 @@
+/home/nprimo/dotfiles/.pi/docker/pi.fish

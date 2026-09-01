@@ -12,6 +12,7 @@ set ENCORE_INSTALL "$HOME/.encore"
 set PATH $PATH "$ENCORE_INSTALL/bin"
 
 set -x EDITOR "nvim"
+set -x OPENCODE_API_KEY (pass show opencode-go/key)
 
 source $HOME/.config/fish/alias.fish
 source $HOME/.config/fish/bun.fish
