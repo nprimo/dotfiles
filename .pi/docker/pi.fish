@@ -121,6 +121,7 @@ function pi --description 'pi inside a sandboxed Docker container'
         -e PLANNOTATOR_REMOTE=1 \
         -p 127.0.0.1:$plannotator_port:19432 \
         -v "$PWD:/workspace" \
+        -v "$HOME/.agents":/home/pi/.agents \
         -v "$HOME/.pi/agent":/home/pi/.pi/agent \
         -v "$HOME/dotfiles":/home/pi/dotfiles:ro \
         -e OPENCODE_API_KEY \
